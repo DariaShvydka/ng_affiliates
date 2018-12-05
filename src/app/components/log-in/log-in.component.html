@@ -1,0 +1,37 @@
+<section class="register">
+  <div class="container log-in">
+    <form #form="ngForm" [formGroup]="loginData" (ngSubmit)="onSubmit(form.value)">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6">
+          <h2 class="text-center">Log In</h2>
+
+          <div class="row">
+            <div class="col-md-12 input-wrap">
+              <div class="input-wrap__item has-success">
+                <div class="field-invalid" *ngIf="usernameError">{{usernameError}}</div>
+                <input class="input-field" name="username" type="text" required
+                       [formControl]="loginData.controls['username']">
+                <div class="input-label">Username</div>
+              </div>
+              <div class="input-wrap__item has-success">
+                <div class="field-invalid" *ngIf="passwordError">{{passwordError}}</div>
+                <input class="input-field" name="password" required
+                       [formControl]="loginData.controls['password']" type="password">
+                <div class="input-label">Password</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 col-md-11 mt-4 d-flex register__buttons">
+              <button class="btn btn-primary btn-block" type="submit">
+                Login
+              </button>
+              <a class="log-in__reset" [routerLink]="['/password-reset']">Forgot Password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

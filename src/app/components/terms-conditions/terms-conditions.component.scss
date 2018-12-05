@@ -1,0 +1,22 @@
+.terms-conditions {
+  height: auto;
+  padding: 5% 0;
+  background-color: #fff;
+    h2 {
+      padding-top: 1em;
+    }
+    .tab-content {
+      border-left: 1px solid #dee2e6;
+    }
+    .privacy-terms,
+    .bonus-terms,
+    .general-terms {
+      padding-top: 1em;
+    }
+}
+
+@media (max-width: 991.98px) {
+  .terms-conditions {
+    padding: 100px 0;
+  }
+}

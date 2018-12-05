@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~bootstrap/dist/css/bootstrap-grid.css';
+@import "assets/fonts/gotham.css";
+
+body {
+  font-family: 'GothamPro Light', sans-serif;
+  font-size: 14px;
+  color: #333;
+  background: black;
+  -webkit-overflow-scrolling: touch;
+}
+
+a,
+button {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus {
+  color: #ea3b38;
+  text-decoration: none;
+}
+
+.btn:focus,
+button:focus {
+  box-shadow: none!important;
+  outline: none!important;
+}
+
+.btn-blue {
+  color: rgba(32, 108, 255, 0.7);
+  border: 1px solid rgba(32, 108, 255, 0.7);
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1em;
+  background: transparent;
+  cursor: pointer;
+}
+.btn-blue:hover {
+   color: rgba(32, 108, 255, 1);
+ }
+
+.btn-pink {
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(212, 75, 125, 0.7);
+  border-radius: 50px;
+  text-align: center;
+  padding: 0.7em 2.5em;
+  font-size: 1em;
+  background: transparent;
+  cursor: pointer;
+}
+.btn-pink:hover {
+  border-color: #ec528a;
+  color: rgba(255, 255, 255, 1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 1px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+/*for terms-conditions page*/
+.body__terms-conditions header {
+  background: #000c25;
+}
+
+@media (min-width: 1699.98px) {}
+
+@media (min-width: 1499.98px) {}
+
+@media (max-width: 1024px) {
+  html,
+  body {
+    /*height: 100%;*/
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 767.98px){
+  p {
+    line-height: 1.5;
+  }
+}
+@media (max-width: 575.98px) {}

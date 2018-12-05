@@ -1,0 +1,121 @@
+
+.sign-up {
+  height: auto!important;
+  display: block;
+  .field-invalid {
+    top: 110%;
+    position: absolute;
+    color: #84183f;
+  }
+  .input-wrap__captcha-img {
+    width: 70%;
+    padding-top: 0.3em;
+    padding-bottom: 0px;
+    position: relative;
+    display: block;
+    vertical-align: top;
+    .captcha-img__wrapper {
+      width: 100%;
+      height: 50px;
+      margin: 0 auto!important;
+      border-bottom: none!important;
+    }
+  }
+  .input-wrap__captcha-answer {
+    width: 30%;
+    height: 100%;
+    padding-bottom: 0px;
+    margin-bottom: 6em;
+    margin-right: 50px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    display: block;
+    vertical-align: top;
+    .input-field {
+      padding: 18px 0 15px!important;
+    }
+    .btn-transparent {
+      border: none;
+      padding: 0 !important;
+      background: transparent !important;
+      top: 30%;
+      left: 84%;
+      z-index: 10;
+      position: absolute;
+      height: 23px;
+        .captcha-refresh {
+          height: 23px;
+          color: rgb(233, 230, 231);
+          cursor: pointer;
+          -ms-transform: rotate(0deg); /* IE 9 */
+          -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+          transform: rotate(0deg);
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          transition: color 0.5s ease-out, -webkit-transform 0.5s ease-out;
+          transition: transform 0.5s ease-out, color 0.5s ease-out;
+          transition: transform 0.5s ease-out, color 0.5s ease-out, -webkit-transform 0.5s ease-out;
+          &:hover {
+            color: rgba(233, 230, 231, 0.4);
+            transform: rotate(360deg);
+          }
+        }
+    }
+    .field-invalid {
+      bottom: -100%;
+      position: absolute;
+      color: #84183f;
+    }
+
+  }
+  &__success {
+    h2 {
+      margin-bottom: 4%;
+    }
+    p {
+      font-size: 1.3em;
+      color: #fff;
+      margin-bottom: 4%;
+    }
+
+  }
+
+  @media (max-width: 991.98px) {
+    .input-wrap {
+      &__captcha-answer {
+        width: 50%;
+        margin-right: 10px;
+      }
+    }
+
+  }
+
+  @media (max-width: 767.98px) {
+    .input-wrap {
+      &__group {
+        flex-direction: column;
+      }
+      &__selectric {
+        margin-bottom: 2.3em;
+      }
+      &__captcha-img {
+        width: 100%;
+        margin-bottom: 3em;
+      }
+      &__captcha-answer {
+        width: 100%;
+        margin-bottom: 3em;
+        input {
+          top: 28%;
+        }
+        .btn-transparent {
+          left: 95%;
+        }
+      }
+    }
+  }
+
+}
+
+
+

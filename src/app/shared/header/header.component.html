@@ -1,0 +1,74 @@
+<header appHeadershadow>
+  <nav class="navbar navbar-expand-lg">
+    <div class="navbar__left">
+        <div class="link">
+          <a [ngx-scroll-to]="'benefits'" [routerLink]="['/']">About Zodiacu</a>
+
+        </div>
+        <div class="link">
+          <a [ngx-scroll-to]="'cooperate'" [routerLink]="['/']">Why us?</a>
+
+        </div>
+        <div class="link">
+          <a [ngx-scroll-to]="'commissions'" [routerLink]="['/']">Commissions</a>
+        </div>
+        <div class="link">
+          <a [ngx-scroll-to]="'start'" [routerLink]="['/']">Getting started</a>
+        </div>
+    </div>
+    <div class="navbar__center">
+      <a [routerLink]="['/']">
+        <img src="assets/img/zodiacu.png" alt="logo" class="img-responsive">
+      </a>
+    </div>
+    <div class="navbar__right">
+      <div class="links">
+        <div class="link">
+          <a [routerLink]="['terms-conditions']">T&C</a>
+        </div>
+        <div class="link">
+          <a [ngx-scroll-to]="'carousel'" [routerLink]="['/']">Testimonials</a>
+        </div>
+        <div class="link">
+          <a [ngx-scroll-to]="'contacts'" [routerLink]="['/']">Contact us</a>
+        </div>
+      </div>
+      <div class="buttons">
+        <a [routerLink]="['sign-up']" class="btn btn-signup">
+          Sign up
+        </a>
+          <a [routerLink]="['log-in']" class="btn btn-login">
+          Log in
+        </a>
+      </div>
+    </div>
+
+    <div id="mobMenu">
+
+    <div class="mob-burger">
+
+      <div class="mob-burger__container">
+        <div class="mob-burger__icon">
+          <div class="mob-burger__bun mob-burger__bun--top"></div>
+          <div class="mob-burger__bun mob-burger__bun--mid"></div>
+          <div class="mob-burger__bun mob-burger__bun--prebottom"></div>
+          <div class="mob-burger__bun mob-burger__bun--bottom"></div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="mob-navigation">
+      <a class="mob-link" [routerLink]="['/']" fragment="benefits" >About Zodiacu</a>
+      <a class="mob-link" [routerLink]="['/']" fragment="cooperate" >Why us?</a>
+      <a class="mob-link" [routerLink]="['/']" fragment="commissions" >Commissions</a>
+      <a class="mob-link" [routerLink]="['/']" fragment="start" >Getting started</a>
+      <a class="mob-link" [routerLink]="['/']" fragment="faq" >FAQ</a>
+      <a class="mob-link" [routerLink]="['/']" fragment="carousel" >Testimonials</a>
+      <a class="mob-link" [routerLink]="['/']" fragment="contactUs" >Contact us</a>
+    </div>
+    </div>
+
+  </nav>
+</header>

@@ -1,0 +1,562 @@
+@import "../../../assets/fonts/gotham.css";
+
+section {
+  padding-top: 110px!important;
+  padding-bottom: 110px!important;
+  font-family: 'GothamPro Light', sans-serif;
+}
+h2 {
+  font-size: 2.8em;
+  margin-bottom: 7%;
+}
+
+.header-main {
+  height: 100vh;
+  padding-top: 0!important;
+  background: url("/assets/img/bg-red.png") no-repeat;
+  background-size: cover;
+  color: white;
+  .header-content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    height: 70vh;
+    margin-top: 15%;
+    h1 {
+      margin-bottom: 0.5em;
+      font: 700 4.2em "GothamPro Regular", sans-serif;
+    }
+    p {
+      font-size: 1.8em;
+    }
+    .btn__create-account {
+      min-width: 220px;
+      margin-top: 20px;
+      padding: 15px 40px;
+      display: inline-block;
+    }
+  }
+}
+//
+//#benefits,
+//#cooperate,
+//#commissions,
+//#start,
+//#testimonials,
+//#contactUs{
+//  background-color: #fff;
+//  height: 50px;
+//}
+
+.benefits {
+  background-color: #fff;
+  color: #333;
+  padding-bottom: 7%;
+  p {
+    font-size: 1.3em;
+  }
+  &__wrap {
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  &__item {
+    background-color: #f6f7fa;
+    height: 340px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    div {
+      padding-bottom: 1.5em;
+    }
+    span {
+      font-size: 1.3em;
+    }
+    p {
+      padding-top: 0.5em;
+      font-size: 1em;
+    }
+
+   }
+  &__heading {
+    margin-bottom: 3em;
+  }
+  &__pdf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 340px;
+    align-items: center;
+     p {
+       padding-top: 1em;
+     }
+     a {
+      position: relative;
+      margin-top: 20px;
+      padding: 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgba(32, 108, 255, 0.7);
+      background-color: rgba(32, 108, 255, 0.5);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.25s;
+      overflow: hidden;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        background-color: #206cff;
+        top: -2px;
+        left: 23%;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        background-color: #206cff;
+        bottom: -2px;
+        right: 23%;
+      }
+      &:hover {
+        color: #206cff;
+        &:after, &:before {
+          -webkit-animation: resize 0.25s forwards;
+          animation: resize 0.25s forwards;
+        }
+      }
+      span {
+        padding: 19.5px 25px;
+        line-height: 0;
+        background-color: #fff;
+        border-radius: 30px;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes resize {
+  0% {
+    width: 0;
+    height: 0;
+  }
+
+  33% {
+    width: 80%;
+    height: 0;
+  }
+
+  100% {
+    width: 80%;
+    height: 110%;
+  }
+}
+@keyframes resize {
+  0% {
+    width: 0;
+    height: 0;
+  }
+
+  33% {
+    width: 80%;
+    height: 0;
+  }
+
+  100% {
+    width: 80%;
+    height: 110%;
+  }
+}
+
+.cooperate {
+  padding: 7% 0 5%;
+  color: #fff;
+  background: -moz-linear-gradient( 55deg, rgb(29,146,203) 0%, rgb(31,129,227) 69%, rgb(32,111,251) 100%);
+  background: -webkit-linear-gradient( 55deg, rgb(29,146,203) 0%, rgb(31,129,227) 69%, rgb(32,111,251) 100%);
+  background: linear-gradient( 55deg, rgb(29,146,203) 0%, rgb(31,129,227) 69%, rgb(32,111,251) 100%);
+  &__item {
+    display: flex;
+    img {
+      padding-right: 2.2em;
+    }
+    span {
+      font-size: 1.5em;
+    }
+    p {
+      padding-top: 1em;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+  .btn__create-account {
+    display: inline-block;
+    min-width: 220px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    text-align: center;
+    border-radius: 50px;
+    margin-top: 4em;
+    padding: 15px 40px;
+    &:hover {
+      border-color: rgba(255, 255, 255, 1);
+      color: #fff;
+    }
+  }
+}
+//
+//#commissions {
+//  background: linear-gradient(55deg, #1d92cb 0%, #1d86db 69%, #1f7ee6 100%);
+//}
+
+.commissions {
+  background: url("/assets/img/commissions/commissions-bg.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 7% 0 5%;
+    p {
+      font-size: 1.3em;
+    }
+    &__wrap {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+    }
+    &__first {
+      margin-right: 2em;
+    }
+    &__second {
+      margin-right: -5em;
+    }
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 3em;
+      margin-top: 6em;
+      p {
+        margin-bottom: 0.7em;
+      }
+      img {
+        margin-right: 2.5em;
+      }
+      .digits {
+        font-size: 3.3em;
+        line-height: 0.5em;
+      }
+      .title {
+        font-size: 2.5em;
+        line-height: 1em;
+      }
+      .subtitle {
+        font-size: 1.1em;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+}
+
+.start {
+  padding-bottom: 7%;
+  background-color: #fff;
+  h2 {
+    margin-bottom: 2%;
+  }
+  &__subtitle {
+    margin-bottom: 6%;
+    font-size: 1.3em;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__icon {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 2em;
+    img {
+      margin-left: 40%;
+    }
+    &-line {
+      width: 100%;
+      padding-left: 20px;
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 215%;
+        height: 1px;
+        background: #206cff;
+      }
+    }
+  }
+}
+
+.contact-us {
+  padding: 7% 0;
+  background-color: #fff;
+  h2 {
+    margin-bottom: 2%;
+  }
+  p {
+    margin-bottom: 5%;
+  }
+  &__subtitle {
+    font-size: 1.3em;
+  }
+  &__box {
+    padding: 2em;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #f6f7fa;
+    .description {
+      padding-left: 2em;
+      a {
+        color: #333;
+        &:hover {
+          color: rgba(234, 59, 56, 0.8);
+        }
+      }
+      &__name {
+        font-size: 1.7em;
+      }
+      &__position {
+        font-size: 1em;
+      }
+      &__email {
+        font-size: 1.3em;
+        padding-top: 1em;
+      }
+      &__skype {
+        font-size: 1.3em;
+        p {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        &:before {
+          content: "";
+          display: inline-block;
+          background: url(/assets/img/skype.svg) no-repeat;
+          background-size: 24px 24px;
+          width: 24px;
+          height: 24px;
+          margin-right: 0.5em;
+        }
+
+      }
+
+    }
+  }
+}
+
+@media (min-width: 1699.98px) {}
+
+@media (min-width: 1499.98px) {
+  .btn-pink {
+    font-size: 1.3em;
+  }
+
+  .header-main {
+    .header-content{
+      p {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .start {
+    &__icon {
+      &-line {
+        &:after {
+          width: 235%;
+        }
+      }
+    }
+  }
+  .benefits {
+    &__item {
+    height: 240px;
+  }
+ }
+}
+
+//tablet
+@media only screen and (min-width: 767.98px) and (max-width: 1024px) {
+  .header-main {
+    .header-content {
+      h1 {
+        font-size: 4em;
+      }
+      .btn__create-account {
+        margin-top: -10em;
+        font-size: 1.3em;
+      }
+    }
+  }
+  .commissions {
+    &__item {
+      .title, .digits {
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .start {
+    &__icon {
+      &-line {
+        &:after {
+          width: 310%;
+        }
+      }
+    }
+  }
+  .contact-us {
+    p {
+      font-size: 1em;
+    }
+    &__box {
+      padding: 1em;
+      .description {
+        padding-left: 1em;
+        &__name {
+          font-size: 1.4em;
+        }
+        &__position {
+          font-size: 1em;
+        }
+        &__email {
+          font-size: 0.9em;
+          padding-top: 1.5em;
+        }
+        &__skype {
+          font-size: 0.9em;
+          p {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          &:before {
+            content: "";
+            background: url(/assets/img/skype.svg) no-repeat;
+            background-size: 14px 14px;
+            margin-right: 0.3em;
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+          }
+
+        }
+
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  section {
+    padding-top: 10%;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+
+  .header-main {
+    .header-content {
+      //height: 70vh;
+      margin-top: 40%;
+      h1 {
+        font: 500 2em "GothamPro Regular", sans-serif;
+      }
+      p {
+        font-size: 1.2em;
+      }
+    }
+  }
+  .benefits {
+    padding-bottom: 0;
+    &__item {
+      .title {
+        font-size: 2em;
+      }
+    }
+  }
+  .commissions{
+    &__wrap {
+      flex-direction: column;
+    }
+    &__second {
+      margin-right: 0;
+    }
+    &__item {
+      margin-bottom: 2em;
+      margin-top: 3em;
+      .title {
+        font-size: 2em;
+      }
+      .digits {
+        font-size: 2em;
+      }
+    }
+    p {
+      font-size: 1.1em;
+    }
+  }
+  .start {
+    &__icon {
+      justify-content: center;
+      img {
+        margin: 0;
+      }
+      &-line {
+        display: none;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  .contact-us {
+    padding-bottom: 0;
+    p {
+      margin-bottom: 10%;
+    }
+    &__box {
+      margin-bottom: 1em;
+      .description {
+        padding-left: 1em;
+        &__name {
+          font-size: 1.4em;
+        }
+        &__email {
+          padding-top: 1.5em;
+        }
+        &__skype {
+          p {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          &:before {
+            content: "";
+            background: url(/assets/img/skype.svg) no-repeat;
+            background-size: 14px 14px;
+            margin-right: 0.3em;
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+          }
+
+        }
+
+      }
+    }
+  }
+}
+

@@ -1,0 +1,202 @@
+@import "../../assets/fonts/gotham.css";
+
+section {
+  font-family: 'GothamPro Light', sans-serif;
+}
+
+h2 {
+  font-size: 2.8em;
+  color: #fff;
+  margin-bottom: 7%;
+}
+
+.field-invalid {
+  top: 110%;
+  position: absolute;
+  color: #84183f;
+}
+
+.register {
+  background: url("/assets/img/commissions/commissions-bg.jpg") no-repeat;
+  background-size: cover;
+  height: auto;
+  padding: 10% 0;
+  button {
+    background: rgba(32, 108, 255, 0.7);
+    border-radius: 50px;
+    padding: 0.7em 2.5em;
+    max-width: 190px;
+    &:hover {
+      background: transparent;
+      border: 1px solid #206cff;
+      border-radius: 50px;
+      padding: 0.7em 2.5em;
+    }
+  }
+  &__buttons {
+    justify-content: space-between;
+    align-items: center;
+    button {
+      font-size: 15px;
+    }
+  }
+}
+
+.input-wrap {
+  border-bottom: none;
+  height: auto;
+  position: relative;
+  display: block;
+  text-align: left;
+  &__item {
+    padding-bottom: 0px;
+    margin-bottom: 6em;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    display: block;
+    vertical-align: top;
+    margin-right: 50px;
+  }
+  &__group {
+    display: flex;
+    padding-bottom: 0;
+    margin-bottom: 5.8em;
+    position: relative;
+    vertical-align: top;
+    margin-right: 50px;
+  }
+  .currency {
+    margin-right: 50px;
+  }
+  &__selectric {
+    position: relative;
+    display: block;
+    vertical-align: top;
+    height: auto;
+    padding: 20px 0 20px;
+    color: #eeebeb;
+    z-index: 10;
+    -webkit-transform: inherit;
+    transform: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    top: 50%;
+    width: 100%;
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 30%;
+      right: 8px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 5px 0 5px;
+      border-color: #a7a3a3 transparent transparent;
+      pointer-events: none;
+    }
+    .input-select {
+      padding: 0!important;
+      font-size: 16px;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: none;
+    }
+    .input-field {
+      top: 0!important;
+    }
+  }
+  .input-field {
+    height: auto;
+    padding: 25px 0 15px;
+    color: #eeebeb;
+    position: relative;
+    z-index: 10;
+    transform: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    box-sizing: border-box;
+    display: block;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    top: 50%;
+    width: 100%;
+    & + .input-label {
+      position: absolute;
+      z-index: 1;
+      color: #eeebeb;
+      font-size: 16px;
+      top: 50%;
+      left: 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      transition: top .35s, color .35s, -webkit-transform .35s;
+      transition: transform .35s, top .35s, color .35s;
+      transition: transform .35s, top .35s, color .35s, -webkit-transform .35s;
+    }
+    &:focus + .input-label,
+    &:valid + .input-label{
+      font-size: 14px;
+      color: #ccc;
+      top: 20%;
+      display: block;
+      -webkit-transform: translateY(-56%) scale(0.9);
+      transform: translateY(-56%) scale(0.9);
+    }
+
+    &:focus {
+      outline: none;
+      -moz-outline: 0 !important;
+      box-shadow: none;
+    }
+  }
+}
+
+
+// GENERAL REGISTER-PAGES ADAPTIVE STYLES
+
+// big tablets lg
+@media (max-width: 1199.98px) {}
+// tablets md
+@media (max-width: 991.98px) {
+  .register {
+    padding: 130px 0;
+  }
+}
+
+// mobile sm
+@media (max-width: 767.98px) {
+
+  .register {
+    &__buttons {
+      justify-content: center;
+      button {
+        font-size: 16px;
+        width: 150px;
+        margin-right: 20px;
+      }
+    }
+  }
+  .input-wrap {
+    &__item {
+      margin-bottom: 3em;
+      margin-right: 0;
+    }
+    &__group {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// mobile xs
+@media (max-width: 575.98px) {}
+

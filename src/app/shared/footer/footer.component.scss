@@ -1,0 +1,134 @@
+@import "../../../assets/fonts/gotham.css";
+
+footer {
+  padding-top: 4%;
+  background-color: #fff;
+  font-family: 'GothamPro Light', sans-serif;
+  position: relative;
+    .social {
+      position: absolute;
+      right: 1%;
+      a {
+        margin-right: 0.7em;
+      }
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+        a {
+          font-size: 1.3em;
+          color: #000;
+          padding-right: 1.5em;
+        }
+    }
+    .everymatrix {
+      padding: 7em;
+      margin-top: 3%;
+      background-color: #f6f7fa;
+      color: #666666;
+    }
+    .payments {
+      background-color: #f6f7fa;
+      .container {
+        border-top: 2px solid #ebecee;
+        padding: 2.8em 0;
+      }
+    }
+    .copyright {
+      padding: 3em 0 2em;
+      font-family: "GothamPro Regular", sans-serif;
+      background-color: #fff;
+    }
+}
+
+@media (min-width: 1499.98px) {
+  footer {
+    .social {
+      right: 5%;
+      a {
+        margin-right: 1em;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+  footer {
+    .footer-nav {
+      a {
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  footer {
+    .footer-nav {
+      a {
+        font-size: 0.9em;
+      }
+    }
+    .social {
+      position: static;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: flex-end;
+      padding-bottom: 1em;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  footer {
+    position: static;
+    .everymatrix {
+      padding: 0;
+      p {
+        line-height: 1.8;
+        font-size: 0.8em;
+        padding: 2em 2em 0 2em;
+        margin-bottom: 0;
+      }
+      &__partners {
+        padding: 0 2em;
+      }
+    }
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      a {
+        padding-right: 1em;
+      }
+    }
+    .social {
+      justify-content: center;
+      a {
+        margin-right: 0.7em;
+      }
+    }
+    .payments {
+      padding-top: 10%;
+      img {
+        max-width: 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 767.98px) and (max-width: 1024px) {
+  footer {
+    .payments {
+      img {
+        margin: 7px;
+        max-width: 120px;
+      }
+    }
+  }
+}

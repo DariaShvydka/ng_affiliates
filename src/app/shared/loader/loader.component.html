@@ -1,0 +1,8 @@
+<div *ngIf="active" class="logo-wrapper">
+  <lottie-animation-view
+    [options]="lottieConfig"
+    [width]="400"
+    [height]="400"
+    (animCreated)="handleAnimation($event)">
+  </lottie-animation-view>
+</div>

@@ -1,0 +1,175 @@
+<section class="sign-up register">
+
+  <div *ngIf="!isSignupComplete; then signupform else success" class="container">
+
+  </div>
+
+</section>
+
+<ng-template #signupform>
+  <div class="container">
+  <form #form="ngForm" [formGroup]="regData" (ngSubmit)="onSubmit(form.value)">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <h2 class="text-center">Sign Up</h2>
+
+        <div class="row">
+          <div class="col-md-6 input-wrap">
+            <div class="input-wrap__item">
+              <div class="field-invalid"
+                *ngIf="regData.controls['username'].touched && !regData.controls['username'].valid && regData.controls['username'].errors['pattern']">
+                Username may contain latin letters, numbers, dot, underscore and hypen, and be 4-20 characters long
+              </div>
+              <div
+                *ngIf="regData.controls['username'].touched && !regData.controls['username'].valid && regData.controls['username'].errors['em_error']">
+                {{error_messages['username']}}
+              </div>
+              <input class="input-field" name="username" type="text" required
+                     [formControl]="regData.controls['username']">
+              <div class="input-label">Username</div>
+            </div>
+          </div>
+          <div class="col-md-6 input-wrap">
+              <div class="input-wrap__item has-success">
+                  <div class="field-invalid"
+                    *ngIf="regData.controls['email'].touched && !regData.controls['email'].valid && regData.controls['email'].errors['pattern']">
+                    Please enter a valid email, you will have to confirm it after registration
+                  </div>
+                  <div class="field-invalid"
+                    *ngIf="regData.controls['email'].touched && !regData.controls['email'].valid && regData.controls['email'].errors['em_error']">
+                    {{error_messages['email']}}
+                  </div>
+                  <input class="input-field" name="email" type="text" required [formControl]="regData.controls['email']">
+                  <div class="input-label">Email</div>
+                </div>
+          </div>
+          <div class="col-md-6 input-wrap">
+              <div class="input-wrap__item">
+                  <div class="field-invalid"
+                    *ngIf="regData.controls['password'].touched && !regData.controls['password'].valid && regData.controls['password'].errors['pattern']">
+                    Password must be 6-50 characters long
+                  </div>
+                  <div class="field-invalid"
+                    *ngIf="regData.controls['password'].touched && !regData.controls['password'].valid && regData.controls['password'].errors['em_error']">
+                    {{error_messages['password']}}
+                  </div>
+                  <input class="input-field" name="password" required [formControl]="regData.controls['password']"
+                         type="password">
+                  <div class="input-label">Password</div>
+                </div>
+          </div>
+          <div class="col-md-6 input-wrap">
+              <div class="input-wrap__item has-success">
+                  <div class="field-invalid"
+                    *ngIf="regData.controls['passwordConfirm'].touched && !regData.controls['passwordConfirm'].valid && regData.controls['passwordConfirm'].errors['passwordsMissmatch']">
+                    Passwords do not match
+                  </div>
+                  <div class="field-invalid"
+                    *ngIf="regData.controls['passwordConfirm'].touched && !regData.controls['passwordConfirm'].valid && regData.controls['passwordConfirm'].errors['em_error']">
+                    {{error_messages['passwordConfirm']}}
+                  </div>
+                  <input class="input-field" name="passwordConfirm" required
+                         [formControl]="regData.controls['passwordConfirm']" type="password">
+                  <div class="input-label">Password Confirm</div>
+                </div>
+          </div>
+          <div class="col-md-6 input-wrap">
+              <div class="input-wrap__item">
+                  <div class="field-invalid"
+                    *ngIf="regData.controls['site'].touched && !regData.controls['site'].valid && regData.controls['site'].errors['pattern']">
+                    Site can't be empty
+                  </div>
+                  <div class="field-invalid"
+                    *ngIf="regData.controls['site'].touched && !regData.controls['site'].valid && regData.controls['site'].errors['em_error']">
+                    {{error_messages['site']}}
+                  </div>
+                  <input class="input-field" name="site" required [formControl]="regData.controls['site']" type="text">
+                  <div class="input-label">Site</div>
+                </div>
+          </div>
+          <div class="col-md-6 input-wrap">
+              <div class="input-wrap__group">
+                  <div class="input-wrap__selectric currency">
+                    <select class="input-field input-select" required [formControl]="regData.controls['currency']">
+                      <option [value]="currency.value" *ngFor="let currency of availableCurrencies">{{ currency.name }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="input-wrap__selectric">
+                    <select class="input-field input-select" required [formControl]="regData.controls['country']">
+                      <option [value]="country.code" *ngFor="let country of availableCountries">{{country.name}}</option>
+                    </select>
+                  </div>
+                </div>
+          </div>
+          <div class="col-md-6 input-wrap">
+              <div class="input-wrap__group">
+
+                  <div class="input-wrap__captcha-answer">
+                    <div class="field-invalid"
+                         *ngIf="regData.controls['captcha'].touched && !regData.controls['captcha'].valid && regData.controls['captcha'].errors['required']">
+                      captcha can't be empty
+                    </div>
+                    <div class="field-invalid"
+                         *ngIf="regData.controls['captcha'].touched && !regData.controls['captcha'].valid && regData.controls['captcha'].errors['em_error']">
+                      {{error_messages['captcha']}}
+                    </div>
+                    <input class="input-field" name="captcha" required [formControl]="regData.controls['captcha']"
+                           type="text">
+                    <div class="input-label"> Captcha</div>
+
+                    <button class="btn-transparent" type="button" (click)="reloadCaptcha()">
+                      <svg-icon src="../../../assets/img/icon-refresh.svg" class="captcha-refresh" [svgStyle]="{ 'width.px':23 }"></svg-icon>
+                    </button>
+
+
+                  </div>
+                  <div class="input-wrap__captcha-img">
+                       <img id="captcha-img" class="captcha-img__wrapper" src="{{ captchaUrl }}" alt="captcha">
+                  </div>
+
+                  <!--<div class="input-wrap__captcha-img">-->
+                    <!--<div id="captcha-img" class="input-wrap__item captcha-img__wrapper"></div>-->
+                  <!--</div>-->
+
+                </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-6 mt-4 d-flex register__buttons">
+            <button class="btn btn-primary btn-block" type="submit">
+              Register
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+  </div>
+</ng-template>
+
+<ng-template #success>
+  <div class="row justify-content-center sign-up__success">
+    <div class="col-sm-12 col-md-10">
+      <h2 class="text-center">Success</h2>
+      <div class="row">
+        <p class="col-md-12 text-center input-wrap">
+          You have successfully created your account.<br>
+          Please note that you will be able to login to the affiliate dashboard as soon as our moderators activate your account.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-12 mt-5 d-flex justify-content-center register__buttons">
+          <button class="btn btn-primary btn-block" type="button" (click)="moveToActivation()">
+            Verify my email
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

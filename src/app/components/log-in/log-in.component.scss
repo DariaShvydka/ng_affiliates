@@ -1,0 +1,21 @@
+
+.log-in {
+  .field-invalid {
+    bottom: -60%;
+    position: absolute;
+    color: #84183f;
+  }
+  .log-in__reset {
+     text-decoration: underline!important;
+     color: #eeebeb;
+     font-size: 1.2em;
+  }
+
+
+  @media (max-width: 767.98px) {
+    &__reset {
+      font-size: 1em;
+    }
+  }
+ }
+

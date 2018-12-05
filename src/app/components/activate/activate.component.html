@@ -1,0 +1,47 @@
+<section class="activate-page register">
+
+  <div *ngIf="!isActivated; then nonactivated else activated"></div>
+
+  <ng-template #nonactivated>
+    <form #form="ngForm" [formGroup]="actData" (ngSubmit)="onSubmit(form.value)">
+      <div *ngIf="!isActivated" class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <h2 class="text-center">Verify your email</h2>
+
+            <div class="row justify-content-center">
+              <div class="col-md-6 input-wrap">
+                <div class="input-wrap__item has-success">
+                  <div class="field-invalid" *ngIf="actData.controls['code'].touched && !actData.controls['code'].valid && actData.controls['code'].errors['required']">code can't be empty message</div>
+                  <div class="field-invalid" *ngIf="actData.controls['code'].touched && !actData.controls['code'].valid && actData.controls['code'].errors['em_error']">code was not found message</div>
+                  <input class="input-field" name="code" type="text" required
+                         [formControl]="actData.controls['code']">
+                  <div class="input-label">Activation code from email</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-block mx-auto" type="submit">
+              Activate
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+
+  <ng-template #activated>
+    <div class="container activate-page__login">
+      <div class="row">
+        <div class="col-12">
+
+          <p class="text-center">You have successfully verified your email.</p>
+          <p class="text-center">Please note that you will be able to login to our affiliate dashboard as soon as our moderators activate your account.</p>
+          <button class="btn btn-primary btn-block mx-auto" type="button" (click)="goToLogin()">Log me in</button>
+
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+</section>
